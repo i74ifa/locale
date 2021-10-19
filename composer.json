@@ -1,0 +1,23 @@
+{
+    "name": "i74ifa/lang",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "I74ifa\\Lang\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "I74ifa\\Lang\\Test\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "i74ifa",
+            "email": "i74ifa@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
