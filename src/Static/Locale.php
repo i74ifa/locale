@@ -6,7 +6,7 @@ use I74ifa\Locale\Locale as LocaleLocale;
 
 /**
  * give me directory languages and locale name\
- * start your project or file set $dir and $locale
+ * start your project or file Locale::set($locale, $dir)
  */
 class Locale
 {
@@ -14,13 +14,13 @@ class Locale
      * directory to locales
      * @var string $dir
      */
-    public static string $dir;
+    protected static string $dir;
 
     /**
      * locale short name like 'ar' || 'en'
      * @var string $locale
      */
-    public static string $locale;
+    protected static string $locale;
 
     /**
      * getting the words
@@ -38,5 +38,16 @@ class Locale
     public static function locale()
     {
         return self::$locale;
+    }
+
+    /**
+     * set locale and directory
+     * @param string $locale
+     * @param string $dir
+     */
+    public static function set($locale, $dir): void
+    {
+        self::$locale = $locale;
+        self::$dir = $dir;
     }
 }
