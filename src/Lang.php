@@ -18,13 +18,14 @@ class Lang
     
     public $lang;
 
-    public $file;
+    public $locale;
 
     public function __construct(string $lang, $dirName)
     {
         $this->lang = $lang;
         $this->dirName = $dirName;
         $this->dir();
+        $this->openFile();
         
     }
 
@@ -39,9 +40,14 @@ class Lang
         $this->dirLang = dir($this->dirName); 
     }
 
-    protected function getFile()
+    public function getFile()
     {
         return (new File($this->lang, $this->dirLang->path))->get();
+    }
+
+    protected function openFile()
+    {
+        $this->locale = include($this->getFile());
     }
 
     public function getDir()
@@ -51,7 +57,7 @@ class Lang
     
     public function get()
     {
-
+        return $this->locale;
     }
 
 

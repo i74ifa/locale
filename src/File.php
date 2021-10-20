@@ -14,14 +14,21 @@ class File
         $this->dir = $dir;
         $this->scandir();
     }
-
+    /**
+     * getting absolute directory to file
+     */
     public function get()
     {
         if ($this->status){
-           return $this->filename; 
+           return $this->dir . '/' . $this->filename;
         }
         return false;
     }
+
+    /**
+     * you will give it short name language like 'ar'\
+     * he will give you file name ar.php || ar.json
+     */
 
     protected function scandir()
     {

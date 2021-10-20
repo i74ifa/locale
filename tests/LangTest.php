@@ -17,21 +17,25 @@ class LangTest extends TestCase
         $this->assertEquals(__DIR__ . '/lang', $lang->getDir()->path);
     }
 
-    // /** @test  */
-    // public function choose_language_test()
-    // {
-    //     $dir = __DIR__ . '/lang';
-    //     $lang = 'ar';
-    //     $lang = new Lang($lang, $dir);
-
-    //     $this->assertEquals($lang->get('Welcome'), 'مرحبا');
-    // }
-
     /** @test  */
-    public function open_file_test()
+    public function directory_file_and_file_name_is_correct()
     {
         $dir = __DIR__ . '/lang';
         $lang = 'ar';
+
+        $lang = new Lang($lang, $dir);
+        
+        $this->assertEquals($dir . '/ar.php', $lang->getFile());
     }
+    /** @test  */
+    public function check_file_content()
+    {
+        $dir = __DIR__ . '/lang';
+        $lang = 'ar';
+
+        $lang = new Lang($lang, $dir);
+        $this->assertEquals('مرحبا', $lang->locale['welcome']);
+    }
+
 
 }
