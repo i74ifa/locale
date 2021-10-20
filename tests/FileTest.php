@@ -1,9 +1,9 @@
 <?php
 
-namespace I74ifa\Lang\Test;
+namespace I74ifa\Locale\Test;
 
-use I74ifa\Lang\File;
-use I74ifa\Lang\Lang;
+use I74ifa\Locale\File;
+use I74ifa\Locale\Locale;
 use PHPUnit\Framework\TestCase;
 
 class FileTest extends TestCase

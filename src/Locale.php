@@ -1,10 +1,10 @@
 <?php
 
-namespace I74ifa\Lang;
+namespace I74ifa\Locale;
 
 use Exception;
 
-class Lang
+class Locale
 {
     /**
      * dir for all files languages

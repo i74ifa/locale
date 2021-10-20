@@ -1,9 +1,9 @@
 <?php
 
-namespace I74ifa\Lang\Test;
+namespace I74ifa\Locale\Test;
 
-use I74ifa\Lang\File;
-use I74ifa\Lang\Lang;
+use I74ifa\Locale\File;
+use I74ifa\Locale\Locale;
 use PHPUnit\Framework\TestCase;
 
 class LangTest extends TestCase
@@ -13,7 +13,7 @@ class LangTest extends TestCase
     {
         $dir = __DIR__ . '/lang';
         $lang = 'ar';
-        $lang = new Lang($lang, $dir);
+        $lang = new Locale($lang, $dir);
         $this->assertEquals(__DIR__ . '/lang', $lang->getDir()->path);
     }
 
@@ -23,7 +23,7 @@ class LangTest extends TestCase
         $dir = __DIR__ . '/lang';
         $lang = 'ar';
 
-        $lang = new Lang($lang, $dir);
+        $lang = new Locale($lang, $dir);
         
         $this->assertEquals($dir . '/ar.php', $lang->getFile());
     }
@@ -33,7 +33,7 @@ class LangTest extends TestCase
         $dir = __DIR__ . '/lang';
         $lang = 'ar';
 
-        $lang = new Lang($lang, $dir);
+        $lang = new Locale($lang, $dir);
         $this->assertEquals('مرحبا', $lang->locale['welcome']);
     }
 

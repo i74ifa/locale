@@ -1,15 +1,15 @@
 {
-    "name": "i74ifa/lang",
+    "name": "i74ifa/locale",
     "version": "0.4",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "I74ifa\\Lang\\": "src/"
+            "I74ifa\\Locale\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "I74ifa\\Lang\\Test\\": "tests/"
+            "I74ifa\\Locale\\Test\\": "tests/"
         }
     },
     "authors": [

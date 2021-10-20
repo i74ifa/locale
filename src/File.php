@@ -1,5 +1,5 @@
 <?php
-namespace I74ifa\Lang;
+namespace I74ifa\Locale;
 
 
 class File

@@ -1,20 +1,20 @@
 <?php
 
-namespace I74ifa\Lang\Static;
+namespace I74ifa\Locale\Static;
 
-use I74ifa\Lang\Lang as LangLang;
+use I74ifa\Locale\Locale as LocaleLocale;
 
 /**
  * give me directory languages and locale name
  */
-class Lang
+class Locale
 {
     public static $dir;    
     public static $lang;
 
     public static function get($field)
     {
-        $lang = new LangLang(self::$lang, self::$dir);
+        $lang = new LocaleLocale(self::$lang, self::$dir);
         if (array_key_exists($field, $lang->locale)){
             return $lang->locale[$field];
         }
