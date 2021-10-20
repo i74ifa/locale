@@ -15,8 +15,9 @@ class Lang
     public static function get($field)
     {
         $lang = new LangLang(self::$lang, self::$dir);
-
-        return $lang->locale[$field];
-        
+        if (array_key_exists($field, $lang->locale)){
+            return $lang->locale[$field];
+        }
+        return $field;
     }
 }

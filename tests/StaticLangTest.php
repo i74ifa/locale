@@ -14,4 +14,13 @@ class StaticLangTest extends TestCase
         Lang::$dir = __DIR__ . '/lang';
         $this->assertEquals('مرحبا', Lang::get('welcome'));
     }
+
+    /** @test  */
+    public function if_key_not_exist_return_same_key()
+    {
+        Lang::$lang = 'ar';
+        Lang::$dir = __DIR__ . '/lang';
+        $this->assertEquals('not world', Lang::get('not world'));
+        $this->assertEquals('not word exist', Lang::get('not word exist'));
+    }
 }

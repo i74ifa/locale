@@ -1,6 +1,6 @@
 {
     "name": "i74ifa/lang",
-    "version": "0.2",
+    "version": "0.4",
     "license": "MIT",
     "autoload": {
         "psr-4": {
