@@ -2,10 +2,10 @@
 
 namespace I74ifa\Lang\Test;
 
-use I74ifa\Locale\Static\Locale;
+use I74ifa\Locale\Locale;
 use PHPUnit\Framework\TestCase;
 
-class StaticLangTest extends TestCase
+class LocaleTest extends TestCase
 {
     /** @test  */
     public function getting_word_from_static_lang_class()
