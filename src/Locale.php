@@ -2,63 +2,51 @@
 
 namespace I74ifa\Locale;
 
-use Exception;
+use I74ifa\Locale\Setup;
 
+/**
+ * give me directory languages and locale name\
+ * start your project or file Locale::set($locale, $dir)
+ */
 class Locale
 {
     /**
-     * dir for all files languages
-     * 
-     * @var string $dirLanguages
+     * directory to locales
+     * @var string $dir
      */
-    public $dirLang;
+    protected static string $dir;
 
-    
-    public $dirName;
-    
-    public $lang;
+    /**
+     * locale short name like 'ar' || 'en'
+     * @var string $locale
+     */
+    protected static string $locale;
 
-    public $locale;
-
-    public function __construct(string $lang, $dirName)
+    /**
+     * getting the words
+     * @param string $field
+     */
+    public static function get(string $field): string
     {
-        $this->lang = $lang;
-        $this->dirName = $dirName;
-        $this->dir();
-        $this->openFile();
-        
+        $locale = new Setup(self::$locale, self::$dir);
+
+
+        return $locale->get($field);
+    }
+
+    public static function locale()
+    {
+        return self::$locale;
     }
 
     /**
-     * convert string to real dir
+     * set locale and directory
+     * @param string $locale
+     * @param string $dir
      */
-    protected function dir()
+    public static function set($locale, $dir): void
     {
-        if (!is_dir($this->dirName)){
-            throw new Exception("not directory");
-        }
-        $this->dirLang = dir($this->dirName); 
+        self::$locale = $locale;
+        self::$dir = $dir;
     }
-
-    public function getFile()
-    {
-        return (new File($this->lang, $this->dirLang->path))->get();
-    }
-
-    protected function openFile()
-    {
-        $this->locale = include($this->getFile());
-    }
-
-    public function getDir()
-    {
-        return $this->dirLang;
-    }
-    
-    public function get()
-    {
-        return $this->locale;
-    }
-
-
 }
