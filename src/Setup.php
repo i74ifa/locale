@@ -33,7 +33,7 @@ class Setup
     protected function dir()
     {
         if (!is_dir($this->dirName)){
-            throw new \Exception("not directory");
+            throw new \Exception("not directory to language");
         }
         $this->dirLang = dir($this->dirName); 
     }
